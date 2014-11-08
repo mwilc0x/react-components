@@ -2,9 +2,8 @@
 "use strict";
 
 var React = require('React');
-var Form = require('./components/form.jsx');
 
-var Page = React.createClass({
+var Form = React.createClass({
 
   getInitialState: function() {
     return {
@@ -14,10 +13,9 @@ var Page = React.createClass({
 
   render: function(){
     return (
-      <Form></Form>
+      <div><h1>Hello World!</h1></div>
     );
   }
-
 });
 
-React.renderComponent(<Page />, document.getElementById('content'));
+module.exports = Form;
