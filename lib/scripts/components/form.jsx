@@ -3,6 +3,7 @@
 
 var React = require('React');
 var Input = require('./input.jsx');
+var Table = require('./table.jsx');
 
 var Form = React.createClass({
 
@@ -14,10 +15,13 @@ var Form = React.createClass({
 
   render: function(){
     return (
-      <form>
-        <Input label="First Name" placeholder="First name"></Input>
-        <Input label="Last Name" placeholder="Last name"></Input>
-      </form>
+      <div>
+        <form>
+          <Input label="First Name" placeholder="First name"></Input>
+          <Input label="Last Name" placeholder="Last name"></Input>
+        </form>
+        <Table></Table>
+      </div>
     );
   }
 });
