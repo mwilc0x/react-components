@@ -1,11 +1,11 @@
 /** @jsx React.DOM */
+"use strict";
 
 var React = require('react/addons')
 var Input = require('react-bootstrap').Input;
 var Validations = require('../utils/validations');
 
-
-var InputComponent = React.createClass({
+var InputTextComponent = React.createClass({
 
   mixins: [React.addons.LinkedStateMixin],
 
@@ -32,4 +32,4 @@ var InputComponent = React.createClass({
   }
 });
 
-module.exports = InputComponent;
+module.exports = InputTextComponent;
