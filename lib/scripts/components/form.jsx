@@ -2,6 +2,7 @@
 "use strict";
 
 var React = require('React');
+var Input = require('./input.jsx');
 
 var Form = React.createClass({
 
@@ -13,7 +14,10 @@ var Form = React.createClass({
 
   render: function(){
     return (
-      <div><h1>Hello World!</h1></div>
+      <form>
+        <Input label="First Name" placeholder="First name"></Input>
+        <Input label="Last Name" placeholder="Last name"></Input>
+      </form>
     );
   }
 });
