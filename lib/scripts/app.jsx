@@ -1,4 +1,3 @@
-/** @jsx React.DOM */
 "use strict";
 
 var React = require('React');
@@ -20,4 +19,4 @@ var Page = React.createClass({
 
 });
 
-React.renderComponent(<Page />, document.getElementById('content'));
+React.render(<Page />, document.getElementById('content'));
