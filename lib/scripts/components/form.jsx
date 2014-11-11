@@ -6,6 +6,9 @@ var Table = require('./table.jsx');
 
 var Form = React.createClass({
 
+  // TODO: Add constructors that can build form components from
+  // object passed in
+
   getInitialState: function() {
     return {
 
