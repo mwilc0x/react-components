@@ -8,6 +8,10 @@ var InputTextComponent = React.createClass({
 
   mixins: [React.addons.LinkedStateMixin],
 
+  propTypes: {
+    value: React.PropTypes.string
+  },
+
   getDefaultProps: function() {
     return {
       value: 'default value'
