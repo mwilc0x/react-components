@@ -9,7 +9,6 @@ var gulp = require('gulp'),
     source = require('vinyl-source-stream'),
     buffer = require('vinyl-buffer'),
     reactify = require('reactify'),
-    uglify = require('gulp-uglify'),
     del = require('del'),
     notify = require('gulp-notify'),
     browserSync = require('browser-sync'),
@@ -57,17 +56,18 @@ gulp.task('browserify', function() {
     .bundle()
     .pipe(source(p.bundle))
     .pipe(buffer())
-    //.pipe(uglify())
     .pipe(gulp.dest(p.distJs));
 });
 
 gulp.task('styles', function() {
-  return gulp.src(p.css)
-    .pipe(changed(p.distCss))
-    .pipe(autoprefixer('last 1 version'))
-    .pipe(csso())
-    .pipe(gulp.dest(p.distCss))
-    .pipe(reload({stream: true}));
+  gulp.watch('lib/styles/**/*.css', function () {
+    return gulp.src(p.css)
+      .pipe(changed(p.distCss))
+      .pipe(autoprefixer('last 1 version'))
+      .pipe(csso())
+      .pipe(gulp.dest(p.distCss))
+      .pipe(reload({stream: true}));
+    });
 });
 
 gulp.task('watchTask', function() {
