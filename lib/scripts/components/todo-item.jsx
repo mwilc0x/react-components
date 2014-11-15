@@ -16,19 +16,19 @@ var TodoItem = React.createClass({
 
     return (
       <div className="row">
-        <label className="col-xs-2">
-          <span style={style} >{this.props.todo.text}</span>
-
-        </label>
-        <label className="col-xs-3">
-          <input type="checkbox" value={this.props.todo.text} onClick={this.onClick} />
-        </label>
+        <span className="col-xs-2" style={style} >{this.props.todo.text}</span>
+        <input className="col-xs-1" type="checkbox" value={this.props.todo.text} onClick={this.onClick} />
+        <span className="col-xs-1 glyphicon glyphicon-trash" onClick={this._deleteTodo}></span>
       </div>
     )
   },
 
   onClick: function() {
     this.getFlux().actions.toggleTodo(this.props.todo);
+  },
+
+  _deleteTodo: function() {
+    this.getFlux().actions.deleteTodo(this.props.todo)
   }
 });
 
