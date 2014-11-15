@@ -1,3 +1,5 @@
+![ReactJS](/lib/images/react.png)
+
 experimental repo for ReactJS with Fluxxor
 
 ```sh
