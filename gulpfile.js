@@ -12,6 +12,7 @@ var gulp = require('gulp'),
     del = require('del'),
     notify = require('gulp-notify'),
     browserSync = require('browser-sync'),
+    concatCss = require('gulp-concat-css'),
     reload = browserSync.reload,
     p = {
       jsx: ['./lib/scripts/app.jsx'],
@@ -64,6 +65,7 @@ gulp.task('styles', function() {
     .pipe(changed(p.distCss))
     .pipe(autoprefixer('last 1 version'))
     .pipe(csso())
+    .pipe(concatCss('bundle.css'))
     .pipe(gulp.dest(p.distCss))
     .pipe(reload({stream: true}));
 });
