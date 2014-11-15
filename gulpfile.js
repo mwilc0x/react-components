@@ -17,9 +17,16 @@ var gulp = require('gulp'),
     p = {
       jsx: ['./lib/scripts/app.jsx'],
       css: ['lib/styles/main.css', 'lib/styles/bootstrap.min.css'],
+      fonts: ['./lib/fonts/glyphicons-halflings-regular.eot',
+        './lib/fonts/glyphicons-halflings-regular.svg',
+        './lib/fonts/glyphicons-halflings-regular.ttf',
+        './lib/fonts/glyphicons-halflings-regular.woff'],
+      images: './lib/images/react.png',
       bundle: 'app.js',
       distJs: 'dist/js',
-      distCss: 'dist/css'
+      distCss: 'dist/css',
+      distFonts: 'dist/fonts',
+      distImages: 'dist/images'
     };
 
 gulp.task('clean', function(cb) {
@@ -70,17 +77,27 @@ gulp.task('styles', function() {
     .pipe(reload({stream: true}));
 });
 
+gulp.task('fonts', function() {
+  return gulp.src(p.fonts)
+    .pipe(gulp.dest(p.distFonts));
+});
+
+gulp.task('images', function() {
+  return gulp.src(p.images)
+    .pipe(gulp.dest(p.distImages));
+});
+
 gulp.task('watchTask', function() {
   gulp.watch(p.css, ['styles']);
 });
 
 gulp.task('watch', ['clean'], function() {
-  gulp.start(['browserSync', 'watchTask', 'watchify', 'styles']);
+  gulp.start(['browserSync', 'watchTask', 'watchify', 'styles', 'fonts', 'images']);
 });
 
 gulp.task('build', ['clean'], function() {
   process.env.NODE_ENV = 'production';
-  gulp.start(['browserify', 'styles']);
+  gulp.start(['browserify', 'styles', 'fonts', 'images']);
 });
 
 gulp.task('default', ['build', 'watch']);
