@@ -1,4 +1,4 @@
-![ReactJS](/lib/images/react.png)
+![ReactJS](/lib/images/react-components.png)
 
 experimental repo for ReactJS with Fluxxor
 
