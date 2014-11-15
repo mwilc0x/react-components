@@ -54,12 +54,20 @@ var Application = React.createClass({
           })}
         </ul>
         <form onSubmit={this.onSubmitForm}>
-          <input type="text" size="30" placeholder="New Todo"
-                 value={this.state.newTodoText}
-                 onChange={this.handleTodoTextChange} />
-          <input type="submit" value="Add Todo" />
+          <div className="row">
+            <div className="col-lg-6">
+              <div className="input-group">
+                <input type="text" className="form-control" placeholder="New Todo"
+                       value={this.state.newTodoText}
+                       onChange={this.handleTodoTextChange} />
+                <span className="input-group-btn">
+                  <button className="btn btn-default" type="submit">Add Todo</button>
+                </span>
+              </div>
+            </div>
+          </div>
         </form>
-        <button onClick={this.clearCompletedTodos}>Clear Completed</button>
+        <button className="btn btn-success btn-completed-todos" onClick={this.clearCompletedTodos}>Clear Completed</button>
       </div>
     );
   },
