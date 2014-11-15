@@ -1,8 +1,13 @@
 li {
-  list-style:none;
+  list-style: none;
   color: orange;
 }
 
 .col-xs-2 {
   word-wrap: break-word;
+}
+
+.btn-completed-todos {
+  position: relative;
+  top: 15px;
 }
