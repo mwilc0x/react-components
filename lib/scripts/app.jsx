@@ -2,6 +2,7 @@ var React = require('react');
 var Fluxxor = require('Fluxxor');
 var TodoStore = require('./stores/TodoStore');
 var actions = require('./actions/actions');
+var TodoItem = require('./components/todo-item.jsx');
 
 var stores = {
   TodoStore: new TodoStore()
@@ -45,7 +46,11 @@ var Application = React.createClass({
       <div>
         <ul>
           {this.state.todos.map(function(todo, i) {
-            return <li key={i}><TodoItem todo={todo} /></li>;
+            return (
+              <div>
+                <li key={i}><TodoItem todo={todo} /></li>
+              </div>
+            );
           })}
         </ul>
         <form onSubmit={this.onSubmitForm}>
@@ -73,26 +78,6 @@ var Application = React.createClass({
 
   clearCompletedTodos: function(e) {
     this.getFlux().actions.clearTodos();
-  }
-});
-
-var TodoItem = React.createClass({
-  mixins: [FluxMixin],
-
-  propTypes: {
-    todo: React.PropTypes.object.isRequired
-  },
-
-  render: function() {
-    var style = {
-      textDecoration: this.props.todo.complete ? "line-through" : ""
-    };
-
-    return <span style={style} onClick={this.onClick}>{this.props.todo.text}</span>;
-  },
-
-  onClick: function() {
-    this.getFlux().actions.toggleTodo(this.props.todo);
   }
 });
 
