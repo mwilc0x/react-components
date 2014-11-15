@@ -60,22 +60,20 @@ gulp.task('browserify', function() {
 });
 
 gulp.task('styles', function() {
-  gulp.watch('lib/styles/**/*.css', function () {
-    return gulp.src(p.css)
-      .pipe(changed(p.distCss))
-      .pipe(autoprefixer('last 1 version'))
-      .pipe(csso())
-      .pipe(gulp.dest(p.distCss))
-      .pipe(reload({stream: true}));
-    });
+  return gulp.src(p.css)
+    .pipe(changed(p.distCss))
+    .pipe(autoprefixer('last 1 version'))
+    .pipe(csso())
+    .pipe(gulp.dest(p.distCss))
+    .pipe(reload({stream: true}));
 });
 
 gulp.task('watchTask', function() {
-  gulp.watch(p.scss, ['styles']);
+  gulp.watch(p.css, ['styles']);
 });
 
 gulp.task('watch', ['clean'], function() {
-  gulp.start(['browserSync', 'watchify']);
+  gulp.start(['browserSync', 'watchTask', 'watchify', 'styles']);
 });
 
 gulp.task('build', ['clean'], function() {
