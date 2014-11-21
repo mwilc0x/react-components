@@ -34,7 +34,7 @@
     "gulp-image": "^0.5.1",
     "gulp-notify": "^2.0.0",
     "mongoose": "3.8.19",
-    "reactify": "^0.15.2",
+    "reactify": "^0.17.0",
     "socket.io": "1.2.0",
     "superagent": "^0.20.0",
     "vinyl-buffer": "^1.0.0",
