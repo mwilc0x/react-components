@@ -3,6 +3,7 @@ var Fluxxor = require('Fluxxor');
 var TodoStore = require('./stores/TodoStore');
 var actions = require('./actions/actions');
 var TodoItem = require('./components/todo-item.jsx');
+var data = require('./utils/server-communication');
 
 var stores = {
   TodoStore: new TodoStore()
