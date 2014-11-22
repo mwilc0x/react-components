@@ -3,7 +3,7 @@ var express = require('express'),
   mongoose = require('mongoose'),
   socketio = require('socket.io'),
   app = express(),
-  port = process.env.PORT || 8080;
+  port = 8080;
 
 mongoose.connect('mongodb://localhost/react-components');
 
