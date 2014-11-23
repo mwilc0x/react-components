@@ -4,7 +4,8 @@ var express = require('express'),
   socketio = require('socket.io'),
   app = express(),
   port = 8080,
-  uriString = 'mongodb://localhost/react-components';
+  uriString = 'mongodb://localhost/react-components',
+  Todo = require('./lib/scripts/models/Todo');
 
 mongoose.connect(uriString, function(err, res) {
   if(err) {
@@ -22,4 +23,11 @@ var server = http.createServer(app).listen(port, function() {
 
 var io = socketio.listen(server);
 
-//loadTodos();
+io.on('connection', function(socket) {
+
+  console.log('new connection initiated');
+
+  socket.on('init-data', function() {
+    console.log('initiating data from mongo');
+  })
+})
