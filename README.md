@@ -2,9 +2,13 @@
 
 experimental repo for ReactJS with Fluxxor
 
+Open three terminal tabs (db, server, client)
+
 ```sh
 npm install
 chmod +x launcher.sh
+mongod
+node server.js
 ./launcher.sh
 ```
 
