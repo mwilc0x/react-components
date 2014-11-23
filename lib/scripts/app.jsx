@@ -2,10 +2,7 @@ var React = require('react'),
     Fluxxor = require('Fluxxor'),
     TodoStore = require('./stores/TodoStore'),
     actions = require('./actions/actions'),
-    TodoItem = require('./components/todo-item.jsx'),
-    data = require('./utils/server-communication');
-
-data.getAllTodos();
+    TodoItem = require('./components/todo-item.jsx');
 
 var stores = {
   TodoStore: new TodoStore()
@@ -28,6 +25,7 @@ var Application = React.createClass({
   mixins: [FluxMixin, StoreWatchMixin("TodoStore")],
 
   getInitialState: function() {
+
     return { newTodoText: "" };
   },
 
@@ -42,6 +40,10 @@ var Application = React.createClass({
     //     fooBarData: flux.store("FooBarStore").someMoreData()
     //   };
     return flux.store("TodoStore").getState();
+  },
+
+  componentDidMount: function() {
+    this.getFlux().actions.loadTodos();
   },
 
   render: function() {
