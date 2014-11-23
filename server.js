@@ -27,7 +27,18 @@ io.on('connection', function(socket) {
 
   console.log('new connection initiated');
 
-  socket.on('init-data', function() {
+  socket.on('get-init-data', function() {
     console.log('initiating data from mongo');
+
+    Todo.find({}).exec(function(err, result) {
+      if (!err) {
+
+        socket.emit('init-data-payload', result);
+
+      } else {
+        // error handling
+      };
+    });
+
   })
 })
