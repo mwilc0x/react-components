@@ -1,9 +1,11 @@
-var React = require('react');
-var Fluxxor = require('Fluxxor');
-var TodoStore = require('./stores/TodoStore');
-var actions = require('./actions/actions');
-var TodoItem = require('./components/todo-item.jsx');
-var data = require('./utils/server-communication');
+var React = require('react'),
+    Fluxxor = require('Fluxxor'),
+    TodoStore = require('./stores/TodoStore'),
+    actions = require('./actions/actions'),
+    TodoItem = require('./components/todo-item.jsx'),
+    data = require('./utils/server-communication');
+
+data.getAllTodos();
 
 var stores = {
   TodoStore: new TodoStore()
