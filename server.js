@@ -40,5 +40,17 @@ io.on('connection', function(socket) {
       };
     });
 
-  })
+  });
+
+  socket.on('add-todo', function(todo) {
+    console.log('adding todo ' + todo.text +' to the database');
+
+    //TODO: implement
+  });
+
+  socket.on('delete-todo', function(todo) {
+    console.log('removing todo ' + todo.text + ' from the database.');
+
+    //TODO: implement
+  });
 })
