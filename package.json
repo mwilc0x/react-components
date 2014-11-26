@@ -22,8 +22,8 @@
     "react-bootstrap": "0.12.0"
   },
   "devDependencies": {
-    "browser-sync": "^1.6.5",
-    "browserify": "^6.2.0",
+    "browser-sync": "^1.7.1",
+    "browserify": "^6.3.3",
     "del": "^0.1.3",
     "fluxxor": "^1.5.0",
     "gulp": "^3.8.9",
