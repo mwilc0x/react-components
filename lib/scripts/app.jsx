@@ -2,7 +2,6 @@ var React = require('react'),
     Fluxxor = require('Fluxxor'),
     TodoStore = require('./stores/TodoStore'),
     actions = require('./actions/actions'),
-    serverActions = require('./actions/server-actions'),
     TodoItem = require('./components/todo-item.jsx');
 
 var stores = {
@@ -10,7 +9,6 @@ var stores = {
 };
 
 var flux = new Fluxxor.Flux(stores, actions);
-flux.addActions(serverActions);
 
 window.flux = flux;
 
