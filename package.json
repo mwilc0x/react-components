@@ -34,6 +34,7 @@
     "gulp-image": "^0.5.1",
     "gulp-notify": "^2.0.0",
     "immutable": "^3.3.0",
+    "lodash": "^2.4.1",
     "mongoose": "3.8.19",
     "q": "^1.1.2",
     "reactify": "^0.17.0",
