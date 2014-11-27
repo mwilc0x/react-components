@@ -33,6 +33,7 @@
     "gulp-csso": "^0.2.9",
     "gulp-image": "^0.5.1",
     "gulp-notify": "^2.0.0",
+    "immutable": "^3.3.0",
     "mongoose": "3.8.19",
     "q": "^1.1.2",
     "reactify": "^0.17.0",
