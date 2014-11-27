@@ -46,7 +46,16 @@ io.on('connection', function(socket) {
   socket.on('add-todo', function(todo) {
     console.log('adding todo ' + todo.text +' to the database');
 
-    //TODO: implement
+    var t = new Todo(todo);
+    t.save(function(err, result) {
+
+      if(err)
+        throw err;
+
+      console.log('added ' + todo.text + ' ' + result);
+    });
+
+    socket.emit('todo-added');
   });
 
   socket.on('delete-todo', function(todo) {
