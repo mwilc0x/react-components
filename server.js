@@ -61,8 +61,6 @@ io.on('connection', function(socket) {
   socket.on('delete-todo', function(todo) {
     console.log('removing todo ' + todo.text + ' from the database.');
 
-    //TODO: implement
-
     Todo.find(todo).remove(function(err, result) {
       if(err)
         throw err;
