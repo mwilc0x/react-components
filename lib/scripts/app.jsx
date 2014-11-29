@@ -72,7 +72,12 @@ var Application = React.createClass({
             </div>
           </div>
         </form>
-        <button className="btn btn-success btn-completed-todos" onClick={this.clearCompletedTodos}>Clear Completed</button>
+        <button className="btn btn-success btn-todos" onClick={this.clearCompletedTodos}>Clear Completed</button>
+        { this.state.canUndo ?
+            <button className="btn btn-info btn-todos" onClick={this.undo}>Undo</button>
+          :
+            <button className="btn btn-info btn-todos" disabled="true">Undo</button>
+        }
       </div>
     );
   },
@@ -91,6 +96,10 @@ var Application = React.createClass({
 
   clearCompletedTodos: function(e) {
     this.getFlux().actions.clearTodos();
+  },
+
+  undo: function() {
+    this.getFlux().actions.undoTodos();
   }
 });
 
