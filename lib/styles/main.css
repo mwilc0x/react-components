@@ -17,7 +17,8 @@ li {
   word-wrap: break-word;
 }
 
-.btn-completed-todos {
+.btn-todos {
   position: relative;
   top: 15px;
+  margin-right: 15px;
 }
