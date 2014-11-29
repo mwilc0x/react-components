@@ -53,9 +53,8 @@ io.on('connection', function(socket) {
         throw err;
 
       console.log('added ' + todo.text + ' ' + result);
+      socket.emit('todo-added', result);
     });
-
-    socket.emit('todo-added');
   });
 
   socket.on('delete-todo', function(todo) {
