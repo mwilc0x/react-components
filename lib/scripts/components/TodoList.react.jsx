@@ -1,10 +1,7 @@
 var React = require('react'),
-    Fluxxor = require('fluxxor'),
-    FluxMixin = Fluxxor.FluxMixin(React),
     TodoItem = require('./todo-item.jsx');
 
 var TodoList = React.createClass({
-  mixins: [FluxMixin],
 
   propTypes: {
     todos: React.PropTypes.array.isRequired
