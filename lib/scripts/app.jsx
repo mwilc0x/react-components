@@ -2,7 +2,7 @@ var React = require('react'),
     Fluxxor = require('Fluxxor'),
     TodoStore = require('./stores/TodoStore'),
     actions = require('./actions/actions'),
-    TodoItem = require('./components/todo-item.jsx');
+    TodoList = require('./components/TodoList.react.jsx');
 
 var stores = {
   TodoStore: new TodoStore()
@@ -49,15 +49,7 @@ var Application = React.createClass({
   render: function() {
     return (
       <div>
-        <ul>
-          {this.state.todos.map(function(todo, i) {
-            return (
-              <div>
-                <li key={i}><TodoItem todo={todo} /></li>
-              </div>
-            );
-          })}
-        </ul>
+        <TodoList todos={this.state.todos} />
         <form onSubmit={this.onSubmitForm}>
           <div className="row">
             <div className="col-lg-6">
