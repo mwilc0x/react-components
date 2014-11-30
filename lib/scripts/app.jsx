@@ -91,7 +91,7 @@ var Application = React.createClass({
   },
 
   undo: function() {
-    this.getFlux().actions.undoTodos();
+    this.getFlux().actions.undoTodos(this.state.undoStates);
   }
 });
 
