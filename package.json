@@ -8,9 +8,9 @@
     "url": "https://github.com/mjw56/react-components"
   },
   "scripts": {
-   "test": "jest lib/scripts/__tests__/*-test.js"
+    "test": "jest lib/scripts/__tests__/*-test.js"
   },
- "jest": {
+  "jest": {
     "rootDir": "./",
     "scriptPreprocessor": "<rootDir>/preprocessor.js",
     "unmockedModulePathPatterns": [
@@ -36,6 +36,7 @@
     "browser-sync": "^1.7.1",
     "browserify": "^7.0.0",
     "del": "^0.1.3",
+    "express": "^4.12.4",
     "fluxxor": "^1.5.0",
     "gulp": "^3.8.9",
     "gulp-autoprefixer": "1.0.1",
